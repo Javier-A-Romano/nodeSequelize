@@ -1,12 +1,12 @@
 import app from './app.js'
 import { sequelize } from './database/database.js'
 
-import './models/Person.js'
-import './models/Post.js'
+//import './models/Person.js'
+//import './models/Post.js'
 
 async function main() {
     try {
-        await sequelize.sync()
+        await sequelize.sync({force:false})
         app.listen(3000)
 
         console.log(`server is listening on port ${3000}`)
