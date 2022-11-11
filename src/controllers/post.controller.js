@@ -1,42 +1,15 @@
-import { Person } from '../models/Person.js'
+import { Post } from '../models/Post.js'
 
-export const getPerson = async (req, res) => {
+export const createPost = async (req, res) => {
     try {
-        const allPerson = await Person.findAll()
+        const { message , idpost } = req.body
 
-        res.json(allPerson)
-    } catch (error) {
-        return res.status(500).json({
-            message: error.message
-        })
-    }
-
-}
-export const createPerson = async (req, res) => {
-    try {
-        const { name } = req.body
-
-        const newPerson = await Person.create({
-            name
+        const newPost = await Post.create({
+            message,
+            idpost
         })
 
-        res.json(newPerson)
-    } catch (error) {
-        return res.status(500).json({
-            message: error.message
-        })
-    }
-}
-export const updatePerson = async (req, res) => {
-    try {
-        const { id } = req.params;
-        const {name} =req.body;
-
-        const personUddate = await Person.findByPk(id)
-        personUddate.name=name
-        await personUddate.save()
-
-        res.json(personUddate)
+        res.json(newPost)
     } catch (error) {
         return res.status(500).json({
             message: error.message
@@ -44,41 +17,15 @@ export const updatePerson = async (req, res) => {
     }
 }
 
-export const deletePerson = async (req, res) => {
+export const getPost = async (req, res) => {
     try {
-        const { id } = req.params
+        const allPost = await Post.findAll()
 
-        await Person.destroy({
-            where: {
-                id,
-            }
-        })
-
-        res.sendStatus(204)
+        res.json(allPost)
     } catch (error) {
         return res.status(500).json({
             message: error.message
         })
     }
-}
 
-export const getPersonID = async (req, res) => {
-    try {
-        const { id } = req.params;
-        
-
-        const personID = await Person.findOne({
-            where:{
-                id:id
-            }
-        })
-        
-        if(!personID)return res.status(404).json({message : `person with ID ${id} does not exists `})
-
-        res.json(personID)
-    } catch (error) {
-        return res.status(500).json({
-            message: error.message
-        })
-    }
 }

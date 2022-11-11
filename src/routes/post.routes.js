@@ -1,14 +1,12 @@
 import {Router} from 'express'
-import { getPerson,createPerson, updatePerson, deletePerson ,getPersonID} from '../controllers/post.controller.js'
+import { createPost,getPost } from '../controllers/post.controller.js'
 
 
 const router = Router()
 
-router.get('/person',getPerson)
-router.get('/person/:id',getPersonID)
-router.post('/person',createPerson)
-router.put('/person/:id',updatePerson)
-router.delete('/person/:id',deletePerson)
+router.get('/post',getPost)
+router.post('/post',createPost)
+
 
 
 export default router
