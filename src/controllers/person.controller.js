@@ -1,5 +1,5 @@
 import { Person } from '../models/Person.js'
-
+import { Post } from '../models/Post.js'
 export const getPerson = async (req, res) => {
     try {
         const allPerson = await Person.findAll()
@@ -81,4 +81,20 @@ export const getPersonID = async (req, res) => {
             message: error.message
         })
     }
+}
+
+export const getPersonPost = async (req, res) => {
+    const {id} =req.params
+    try {
+        const PersonPost = await Post.findAll({
+            where:{idpost:id}
+        })
+
+        res.json(PersonPost)
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message
+        })
+    }
+
 }
