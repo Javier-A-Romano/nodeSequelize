@@ -1,6 +1,7 @@
 import app from './app.js'
 import { sequelize } from './database/database.js'
 
+
 //import './models/Person.js'
 //import './models/Post.js'
 
