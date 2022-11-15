@@ -4,6 +4,12 @@ import { getPerson,createPerson, updatePerson, deletePerson ,getPersonID,getPers
 
 const router = Router()
 
+/**
+ * @swagger
+ * /post:
+ *  get:
+ *    summary:Return all post
+ */
 router.get('/person',getPerson)
 router.get('/person/:id',getPersonID)
 router.post('/person',createPerson)
