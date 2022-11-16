@@ -41,6 +41,40 @@ const router = Router()
  *        type: string
  *      description: the post id
  */
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    Post:
+ *      type: object
+ *      properties:
+ *        id:
+ *          type: string
+ *          description: the auto-generated id of post
+ *        message:
+ *          type: string
+ *          description: the message of the post
+ *        idpost: 
+ *          type: string
+ *          description: the id of the post  
+ *      required:
+ *        - message
+ *        
+ *      example:
+ *        id: 1
+ *        message: My first post
+ *        idpost: 3  
+ *        
+ *    PostNotFound:
+ *      type: object
+ *      properties:
+ *        msg:
+ *          type: string
+ *          description: A message for the not found Post
+ *      example:
+ *        msg: Post was not found
+ *
+ */
 
 /**
  * @swagger
