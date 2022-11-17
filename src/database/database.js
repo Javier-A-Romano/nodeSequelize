@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize'
-const dotenv = require('dotenv');
+import dotenv from 'dotenv'
 
 /*export const sequelize = new Sequelize('projectsdb', 'postgres', 'shorlak', {
     host: 'localhost', dialect: 'postgres'
