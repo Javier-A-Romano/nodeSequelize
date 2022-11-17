@@ -14,7 +14,7 @@ const {
   DB_URI
 } = process.env
 
-const sequelize = new Sequelize(DB_URI, {
+export const sequelize = new Sequelize(DB_URI, {
     define: {
       timestamps: false
     }
