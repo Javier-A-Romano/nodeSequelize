@@ -64,7 +64,8 @@ app.get('/person/logout', (req, res) => {
 
         if (err) { res.sendStatus(403) } else { next() }
     })
-})*/
+})
+*/
 app.use(personRoutes)
 app.use(postRoutes)
 
