@@ -105,7 +105,7 @@ router.get('/person',getPerson)
  * @swagger
  * /person/{id}:
  *  get:
- *    summary: create a new person
+ *    summary: get a person
  *    tags: [Person]
  *    parameters:
  *      - $ref: '#/components/parameters/Idperson'

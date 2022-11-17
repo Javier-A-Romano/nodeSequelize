@@ -101,7 +101,7 @@ router.post('/post', createPost)
  * @swagger
  * /post/{id}:
  *  get:
- *    summary: create a new post
+ *    summary: get a post
  *    tags: [Post]
  *    parameters:
  *      - $ref: '#/components/parameters/Idpost'
