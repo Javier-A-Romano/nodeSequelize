@@ -18,7 +18,7 @@ const options  = {
         },
         servers: [
             {
-                url: "http://localhost:3000",
+                url: "https://nodesequelize-production.up.railway.app/",
             },
         ],
     },
